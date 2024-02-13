@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 interface Post {
   id: number;
@@ -8,18 +8,20 @@ interface Post {
 const ExternalAPIComponent = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string>('');
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts"
+        );
         if (!response.ok) {
-          throw new Error('Failed to fetch');
+          throw new Error("Failed to fetch");
         }
         const data = await response.json();
         setPosts(data.slice(0, 5));
-      } catch (error:any) {
+      } catch (error: any) {
         setError(error);
       } finally {
         setIsLoading(false);
@@ -34,9 +36,11 @@ const ExternalAPIComponent = () => {
 
   return (
     <div>
-      {posts.map((post) => (
-        <div key={post.id}>{post.title}</div>
-      ))}
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
     </div>
   );
 };
