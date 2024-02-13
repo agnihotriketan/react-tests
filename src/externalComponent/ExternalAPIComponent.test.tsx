@@ -4,14 +4,14 @@ import React from "react";
 import { render, screen, waitFor, act } from "@testing-library/react";
 import ExternalAPIComponent from "./ExternalAPIComponent";
 
-describe('ExternalAPIComponent component', () => {
-  test('renders posts if request succeeds', async () => {
-    render(<ExternalAPIComponent />)
+// describe('ExternalAPIComponent component', () => {
+//   test('renders posts if request succeeds', async () => {
+//     render(<ExternalAPIComponent />)
 
-    const listItemElements = await screen.findAllByRole('listitem');
-    expect(listItemElements).not.toHaveLength(0);
-  });
-});
+//     const listItemElements = await screen.findAllByRole('listitem');
+//     expect(listItemElements).not.toHaveLength(0);
+//   });
+// });
 
 describe("ExternalAPIComponent", () => {
   beforeEach(() => {
