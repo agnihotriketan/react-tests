@@ -37,7 +37,6 @@ const ExternalAPIComponent = () => {
   return (
     <div>
       <ul>
-        <li></li>
         {posts.map((post) => (
           <li key={post.id}>{post.title}</li>
         ))}
