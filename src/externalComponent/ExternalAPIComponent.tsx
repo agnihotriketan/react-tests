@@ -36,8 +36,9 @@ const ExternalAPIComponent = () => {
 
   return (
     <div>
+      {posts?.length === 0 && <div>No posts available</div>}
       <ul>
-        {posts.map((post) => (
+        {posts?.map((post) => (
           <li key={post.id}>{post.title}</li>
         ))}
       </ul>
